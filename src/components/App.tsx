@@ -1,7 +1,15 @@
 import React from "react";
+import fetchRandomRecipe from "../fetchApi";
 
-function App() {
-  return <h1>App</h1>;
+const handleClick = () => {
+  fetchRandomRecipe();
+};
+
+export default function App() {
+  return (
+    <>
+      <h1>App</h1>
+      <button onClick={handleClick}>Search Recipes</button>
+    </>
+  );
 }
-
-export default App;
