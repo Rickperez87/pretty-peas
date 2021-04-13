@@ -9,20 +9,20 @@ export default function App() {
 
   const onSearchSubmit = async (term: string) => {
     const RANDOM_RECIPE_URL =
-      "https://api.spoonacular.com/recipes/autocomplete";
-    // const apiKey = `?apiKey=${process.env.API_KEY}`;
+      "https://api.spoonacular.com/recipes/complexSearch";
     const res = await axios.get(RANDOM_RECIPE_URL, {
       params: { query: term, number: 10, apiKey: process.env.API_KEY },
     });
     setData(res);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSearchSubmit(term);
   };
-  const handleChange = (e) => {
-    setTerm(e.target.value);
+  const handleChange = (e: React.FormEvent) => {
+    const target = e.target as HTMLFormElement;
+    setTerm(target.value);
     console.log(term);
   };
   return (
