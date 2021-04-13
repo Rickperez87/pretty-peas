@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
 import fetchRandomRecipe from "../fetchApi";
 import axios from "axios";
 
 export default function App() {
-  const [data, setData]: any = useState("");
+  const [data, setData]: any = useState([]);
   const [term, setTerm] = useState("");
 
   const onSearchSubmit = async (term: string) => {
@@ -13,10 +12,9 @@ export default function App() {
     const res = await axios.get(RANDOM_RECIPE_URL, {
       params: { query: term, number: 10, apiKey: process.env.API_KEY },
     });
-    setData(res);
-    console.log(data.results);
+    setData(res.data.results);
   };
-
+  console.log(data);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSearchSubmit(term);
@@ -24,7 +22,6 @@ export default function App() {
   const handleChange = (e: React.FormEvent) => {
     const target = e.target as HTMLFormElement;
     setTerm(target.value);
-    console.log(term);
   };
   return (
     <>
