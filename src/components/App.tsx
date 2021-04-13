@@ -14,6 +14,7 @@ export default function App() {
       params: { query: term, number: 10, apiKey: process.env.API_KEY },
     });
     setData(res);
+    console.log(data.results);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
