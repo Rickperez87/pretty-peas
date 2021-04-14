@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./style.scss";
 
 export default function Searchbar() {
   const [data, setData]: any = useState([]);
@@ -24,15 +25,16 @@ export default function Searchbar() {
   };
   return (
     <>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className="searchbar__form" onSubmit={(e) => handleSubmit(e)}>
         <input
+          className="searchbar__input"
           type="text"
           onChange={(e) => {
             handleChange(e);
           }}
           value={term}
         />
-        <button>Search Recipes</button>
+        <button className="searchbar__btn">Search Recipes</button>
       </form>
     </>
   );

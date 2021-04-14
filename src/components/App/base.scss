@@ -1,0 +1,32 @@
+//reset
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  background: #eeeee9;
+}
+p,
+input,
+button {
+  margin: 1rem;
+}
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+h1,
+h2,
+h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
