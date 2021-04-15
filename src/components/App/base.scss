@@ -20,13 +20,8 @@ button {
   margin: 1rem;
 }
 .container {
-  max-width: 120rem;
-  margin: 0 auto;
-}
-h1,
-h2,
-h3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 20vh 30vh 20vh auto;
+  text-align: center;
 }

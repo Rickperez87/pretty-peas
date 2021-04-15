@@ -24,7 +24,7 @@ export default function Searchbar() {
     setTerm(target.value);
   };
   return (
-    <>
+    <div className="searchbar">
       <form className="searchbar__form" onSubmit={(e) => handleSubmit(e)}>
         <input
           className="searchbar__input"
@@ -36,6 +36,6 @@ export default function Searchbar() {
         />
         <button className="searchbar__btn">Search Recipes</button>
       </form>
-    </>
+    </div>
   );
 }

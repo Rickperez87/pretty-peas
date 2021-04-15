@@ -1,13 +1,16 @@
 import React from "react";
-import Searchbar from "../Searchbar/Searchbar";
+import Header from "../Header/Header";
+import Sidebar from "../Sidebar/Sidebar";
+import MainContent from "../MainContent/MainContent";
 import "./base.scss";
 
 export default function App() {
   return (
     <>
       <div className="container">
-        <h1>Pretty Pea's</h1>
-        <Searchbar />
+        <Header />
+        <Sidebar />
+        <MainContent />
       </div>
     </>
   );
