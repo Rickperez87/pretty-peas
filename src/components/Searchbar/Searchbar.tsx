@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import "./style.scss";
-import { fetchRecipes } from "~/state/actions";
+import { fetchRecipes } from "../../state/actions";
+import { connect } from "react-redux";
 
-export default function Searchbar() {
+function Searchbar(props) {
+  console.log(props);
   const [data, setData]: any = useState([]);
   const [term, setTerm] = useState("");
 
-  const onSearchSubmit = (term: string) => {
-    fetchRecipes(term);
+  const onSearchSubmit = () => {
+    props.fetchRecipes(term);
+    console.log(props.recipes);
   };
   console.log(data);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSearchSubmit(term);
+    onSearchSubmit();
   };
   const handleChange = (e: React.FormEvent) => {
     const target = e.target as HTMLFormElement;
@@ -34,3 +37,9 @@ export default function Searchbar() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return { recipes: state.recipes.data };
+};
+
+export default connect(mapStateToProps, { fetchRecipes })(Searchbar);

@@ -1,14 +1,14 @@
-import { action } from "./actions";
+import { combineReducers } from "redux";
 
-const initialState = {
-  articles: [],
+const fetchRecipesReducer = (state = [], action) => {
+  switch (action.type) {
+    case "FETCH_RECIPES":
+      return action.payload;
+    default:
+      return state;
+  }
 };
 
-function rootReducer(state = initialState, action) {
-  if (action.type === "ADD_ARTICLE") {
-    state.articles.push(action.payload);
-  }
-
-  return state;
-}
-export default rootReducer;
+export default combineReducers({
+  recipes: fetchRecipesReducer,
+});
