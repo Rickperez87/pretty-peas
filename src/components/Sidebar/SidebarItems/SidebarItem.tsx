@@ -1,11 +1,11 @@
 import React from "react";
+import "./style.scss";
 
-function SidebarItem() {
+function SidebarItem({ recipe }) {
   return (
     <div className="sidebar-item">
-      {/* // <div className="sidebar-item__image">{recipes.image}</div>
-      // <div className="sidebar-item__title">{recipes.title}</div>
-      // <div className="sidebar-item__author">{recipes.author}</div> */}
+      <img src={recipe.image} className="sidebar-item__image"></img>
+      <div className="sidebar-item__title">{recipe.title}</div>
     </div>
   );
 }

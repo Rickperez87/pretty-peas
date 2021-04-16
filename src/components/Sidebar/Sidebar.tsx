@@ -1,13 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
 import SidebarItem from "./SidebarItems/SidebarItem";
 import "./style";
 
-const Sidebar = () => {
+const Sidebar = ({ recipes }) => {
+  console.log(recipes);
   return (
     <div className="sidebar">
       <h1>Sidebar</h1>
-      {/* {recipes.map(recipe=><SidebarItem recipe={recipe}/>)} */}
+      {recipes.map((recipe) => (
+        <SidebarItem recipe={recipe} />
+      ))}
     </div>
   );
 };
-export default Sidebar;
+const mapStateToProps = (state) => {
+  return { recipes: state.recipes };
+};
+
+export default connect(mapStateToProps)(Sidebar);

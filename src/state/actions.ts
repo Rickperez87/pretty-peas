@@ -6,7 +6,7 @@ export const fetchRecipes = (searchTerm: string) => async (dispatch) => {
     params: { query: searchTerm, number: 10, apiKey: process.env.API_KEY },
   });
 
-  dispatch({ type: "FETCH_RECIPES", payload: res });
+  dispatch({ type: "FETCH_RECIPES", payload: res.data.results });
 
   return { type: "FETCH_RECIPES", payload: searchTerm };
 };

@@ -1,0 +1,11 @@
+img {
+  width: 100%;
+}
+
+.sidebar-item {
+  &__image {
+    height: 50px;
+    width: 50px;
+    border-radius: 100rem;
+  }
+}
