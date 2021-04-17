@@ -3,9 +3,29 @@ img {
 }
 
 .sidebar-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
   &__image {
     height: 50px;
     width: 50px;
     border-radius: 100rem;
+    margin-right: 2rem;
+  }
+  &__title {
+    background: linear-gradient(to bottom right, #f4a261, #e76f51);
+    background-attachment: fixed;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }

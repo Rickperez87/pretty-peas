@@ -7,9 +7,8 @@ const Sidebar = ({ recipes }) => {
   console.log(recipes);
   return (
     <div className="sidebar">
-      <h1>Sidebar</h1>
       {recipes.map((recipe) => (
-        <SidebarItem recipe={recipe} />
+        <SidebarItem key={recipe.id} recipe={recipe} />
       ))}
     </div>
   );
