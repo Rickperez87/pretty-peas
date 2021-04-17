@@ -4,7 +4,6 @@ import SidebarItem from "./SidebarItems/SidebarItem";
 import "./style";
 
 const Sidebar = ({ recipes }) => {
-  console.log(recipes);
   return (
     <div className="sidebar">
       {recipes.map((recipe) => (
