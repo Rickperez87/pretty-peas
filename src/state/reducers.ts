@@ -1,17 +1,33 @@
 import { combineReducers } from "redux";
 
-const fetchRecipesReducer = (state = [], action) => {
+interface FetchRecipesAction {
+  type: ActionType.FETCH_RECIPES;
+  payload?: any;
+}
+interface FetchRecipeAction {
+  type: ActionType.FETCH_RECIPES;
+  payload?: any;
+}
+
+type Action = FetchRecipesAction | FetchRecipeAction;
+
+enum ActionType {
+  FETCH_RECIPES = "FETCH_RECIPES",
+  FETCH_RECIPE = "FETCH_RECIPES",
+}
+
+const fetchRecipesReducer = (state = [], action: Action) => {
   switch (action.type) {
-    case "FETCH_RECIPES":
+    case ActionType.FETCH_RECIPES:
       return action.payload;
     default:
       return state;
   }
 };
 
-const fetchRecipeReducer = (state = [], action) => {
+const fetchRecipeReducer = (state = [], action: Action) => {
   switch (action.type) {
-    case "FETCH_RECIPE":
+    case ActionType.FETCH_RECIPE:
       return action.payload;
     default:
       return state;
