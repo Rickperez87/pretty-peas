@@ -9,6 +9,16 @@ const fetchRecipesReducer = (state = [], action) => {
   }
 };
 
+const fetchRecipeReducer = (state = [], action) => {
+  switch (action.type) {
+    case "FETCH_RECIPE":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   recipes: fetchRecipesReducer,
+  recipe: fetchRecipeReducer,
 });

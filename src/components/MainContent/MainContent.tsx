@@ -1,7 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
 import "./style.scss";
-const MainContent = () => {
+const MainContent = ({ recipe }) => {
   return <div className="main-content">Main</div>;
 };
 
-export default MainContent;
+const mapStateToProps = (state) => {
+  return { recipe: state.recipe };
+};
+
+export default connect(mapStateToProps)(MainContent);
