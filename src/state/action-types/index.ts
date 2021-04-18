@@ -1,0 +1,4 @@
+export enum ActionType {
+  FETCH_RECIPES = "FETCH_RECIPES",
+  FETCH_RECIPE = "FETCH_RECIPES",
+}

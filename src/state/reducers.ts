@@ -1,20 +1,6 @@
 import { combineReducers } from "redux";
-
-interface FetchRecipesAction {
-  type: ActionType.FETCH_RECIPES;
-  payload?: any;
-}
-interface FetchRecipeAction {
-  type: ActionType.FETCH_RECIPES;
-  payload?: any;
-}
-
-type Action = FetchRecipesAction | FetchRecipeAction;
-
-enum ActionType {
-  FETCH_RECIPES = "FETCH_RECIPES",
-  FETCH_RECIPE = "FETCH_RECIPES",
-}
+import { Action } from "./action-interfaces";
+import { ActionType } from "./action-types";
 
 const fetchRecipesReducer = (state = [], action: Action) => {
   switch (action.type) {
