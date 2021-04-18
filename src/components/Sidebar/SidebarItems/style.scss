@@ -6,6 +6,7 @@ img {
   display: flex;
   justify-content: start;
   align-items: center;
+  padding: 0 3rem;
   &:not(:last-child) {
     margin-bottom: 2rem;
     &:hover {

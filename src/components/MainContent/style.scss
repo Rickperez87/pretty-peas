@@ -1,9 +1,11 @@
 .main-content {
   grid-column: 2/4;
   grid-row: 2/4;
-  background: #000;
-  color: #fff;
+  background: #eeeee9;
+  color: #000;
   display: flex;
-  align-items: center;
+  padding-top: 3rem;
+  align-items: flex-start;
   justify-content: center;
+  min-height: 80vh;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "./style.scss";
 const MainContent = ({ recipe }) => {
-  return <div className="main-content">Main</div>;
+  return <div className="main-content">Start by searching for a recipe</div>;
 };
 
 const mapStateToProps = (state) => {
