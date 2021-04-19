@@ -1,19 +1,30 @@
 import axios from "axios";
+import { ActionType } from "../state/action-types";
 
-export const fetchRecipes = (searchTerm: string) => async (dispatch) => {
-  const RANDOM_RECIPE_URL = "https://api.spoonacular.com/recipes/complexSearch";
-  const res = await axios.get(RANDOM_RECIPE_URL, {
-    params: {
-      query: searchTerm,
-      number: 10,
-      apiKey: process.env.API_KEY,
-      addRecipeInformation: true,
-      includeIngredients: true,
-      fillIngredients: true,
-    },
-  });
+export const fetchRecipes = (searchTerm: string) => async (dispatch: any) => {
+  dispatch({ type: ActionType.FETCH_RECIPES });
 
-  dispatch({ type: "FETCH_RECIPES", payload: res.data.results });
+  try {
+    const RANDOM_RECIPE_URL =
+      "https://api.spoonacular.com/recipes/complexSearch";
+    const res = await axios.get(RANDOM_RECIPE_URL, {
+      params: {
+        query: searchTerm,
+        number: 10,
+        apiKey: process.env.API_KEY,
+        addRecipeInformation: true,
+        includeIngredients: true,
+        fillIngredients: true,
+      },
+    });
+
+    dispatch({
+      type: ActionType.FETCH_RECIPES_SUCCESS,
+      payload: res.data.results,
+    });
+  } catch (err) {
+    dispatch({ type: ActionType.FETCH_RECIPES_ERROR, payload: err.message });
+  }
 };
 
 export const fetchRecipe = (id: number) => async (dispatch, getState) => {
