@@ -28,19 +28,25 @@ export const fetchRecipes = (searchTerm: string) => async (dispatch: any) => {
 };
 
 export const fetchRecipe = (id: number) => async (dispatch, getState) => {
-  const GET_RECIPE_INGREDIENTS_URL = `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json`;
-  const res = await axios.get(GET_RECIPE_INGREDIENTS_URL, {
-    params: {
-      apiKey: process.env.API_KEY,
-    },
-  });
+  dispatch({ type: ActionType.FETCH_RECIPE, payload: [] });
 
-  //filter recipe by id
-  const [recipe] = getState().recipes.recipes.filter(
-    (recipe) => recipe.id === id
-  );
-  // Add ingredients to recipe object
-  recipe.ingredients = res.data.ingredients;
+  try {
+    const GET_RECIPE_INGREDIENTS_URL = `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json`;
+    const res = await axios.get(GET_RECIPE_INGREDIENTS_URL, {
+      params: {
+        apiKey: process.env.API_KEY,
+      },
+    });
 
-  dispatch({ type: "FETCH_RECIPE", payload: recipe });
+    //filter recipe by id
+    const [recipe] = getState().recipes.recipes.filter(
+      (recipe) => recipe.id === id
+    );
+    // Add ingredients to recipe object
+    recipe.ingredients = res.data.ingredients;
+
+    dispatch({ type: ActionType.FETCH_RECIPE_SUCCESS, payload: recipe });
+  } catch (err) {
+    dispatch({ type: ActionType.FETCH_RECIPE_ERROR, payload: err.message });
+  }
 };

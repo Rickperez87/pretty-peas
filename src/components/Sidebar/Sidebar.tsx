@@ -5,7 +5,6 @@ import "./style";
 
 const Sidebar = () => {
   const { recipes, loading, error } = useSelector((state) => state.recipes);
-  console.log(recipes, loading, error);
   return (
     <div className="sidebar">
       {recipes.map((recipe) => (
