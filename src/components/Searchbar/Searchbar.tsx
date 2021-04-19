@@ -4,7 +4,6 @@ import { fetchRecipes } from "../../state/actions";
 import { connect } from "react-redux";
 
 function Searchbar(props) {
-  const [data, setData]: any = useState([]);
   const [term, setTerm] = useState("");
 
   const onSearchSubmit = () => {

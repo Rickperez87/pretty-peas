@@ -1,9 +1,11 @@
 import React from "react";
-import { connect } from "react-redux";
 import SidebarItem from "./SidebarItems/SidebarItem";
+import { useSelector } from "react-redux";
 import "./style";
 
-const Sidebar = ({ recipes }) => {
+const Sidebar = () => {
+  const { recipes, loading, error } = useSelector((state) => state.recipes);
+  console.log(recipes, loading, error);
   return (
     <div className="sidebar">
       {recipes.map((recipe) => (
@@ -12,8 +14,5 @@ const Sidebar = ({ recipes }) => {
     </div>
   );
 };
-const mapStateToProps = (state) => {
-  return { recipes: state.recipes };
-};
 
-export default connect(mapStateToProps)(Sidebar);
+export default Sidebar;
