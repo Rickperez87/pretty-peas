@@ -36,7 +36,9 @@ export const fetchRecipe = (id: number) => async (dispatch, getState) => {
   });
 
   //filter recipe by id
-  const [recipe] = getState().recipes.filter((recipe) => recipe.id === id);
+  const [recipe] = getState().recipes.recipes.filter(
+    (recipe) => recipe.id === id
+  );
   // Add ingredients to recipe object
   recipe.ingredients = res.data.ingredients;
 
