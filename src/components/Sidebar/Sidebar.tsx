@@ -1,16 +1,18 @@
 import React from "react";
 import SidebarItem from "./SidebarItems/SidebarItem";
-import { useSelector } from "react-redux";
+import { useTypedSelector } from "../../Hooks/useTypedSelector";
 import "./style";
 
 const Sidebar = () => {
-  const { recipes, loading, error } = useSelector((state) => state.recipes);
+  const { recipes, loading, error } = useTypedSelector(
+    (state) => state.recipes
+  );
   return (
     <>
       {recipes.length === 0 && <div></div>}
       {!loading && !error && (
         <div className="sidebar">
-          {recipes.map((recipe) => (
+          {recipes.map((recipe: any) => (
             <SidebarItem key={recipe.id} recipe={recipe} />
           ))}
         </div>

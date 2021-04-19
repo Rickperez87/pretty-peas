@@ -2,14 +2,14 @@ import { combineReducers } from "redux";
 import { Action } from "./action-interfaces";
 import { ActionType } from "./action-types";
 
-interface FetchRecipesState {
+export interface FetchRecipesState {
   loading: boolean;
-  recipes: any[];
+  recipes: any[] | any;
   error: string | null;
 }
-interface FetchRecipeState {
+export interface FetchRecipeState {
   loading: boolean;
-  recipe: any[];
+  recipe: any[] | any;
   error: string | null;
 }
 
@@ -19,7 +19,7 @@ const fetchRecipeInitialState = { loading: false, recipe: [], error: null };
 const fetchRecipesReducer = (
   state: FetchRecipesState = fetchRecipesInitialState,
   action: Action
-) => {
+): FetchRecipesState => {
   switch (action.type) {
     case ActionType.FETCH_RECIPES:
       return { loading: true, error: null, recipes: [] };
@@ -35,20 +35,23 @@ const fetchRecipesReducer = (
 const fetchRecipeReducer = (
   state: FetchRecipeState = fetchRecipeInitialState,
   action: Action
-) => {
+): FetchRecipeState => {
   switch (action.type) {
     case ActionType.FETCH_RECIPE:
       return { loading: true, error: null, recipe: [] };
     case ActionType.FETCH_RECIPE_SUCCESS:
       return { loading: false, error: null, recipe: action.payload };
-    case ActionType.FETCH_RECIPE_SUCCESS:
+    case ActionType.FETCH_RECIPE_ERROR:
       return { loading: false, error: action.payload, recipe: [] };
     default:
       return state;
   }
 };
-
-export default combineReducers({
+const reducers = combineReducers({
   recipes: fetchRecipesReducer,
   recipe: fetchRecipeReducer,
 });
+
+export default reducers;
+
+export type RootState = ReturnType<typeof reducers>;

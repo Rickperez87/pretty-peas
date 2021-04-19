@@ -5,7 +5,7 @@ interface FetchRecipesAction {
 }
 interface FetchRecipesSuccessAction {
   type: ActionType.FETCH_RECIPES_SUCCESS;
-  payload: any[];
+  payload: any;
 }
 interface FetchRecipesErrorAction {
   type: ActionType.FETCH_RECIPES_ERROR;
@@ -16,7 +16,7 @@ interface FetchRecipeAction {
 }
 interface FetchRecipeSuccessAction {
   type: ActionType.FETCH_RECIPE_SUCCESS;
-  payload: any[];
+  payload: any;
 }
 interface FetchRecipeErrorAction {
   type: ActionType.FETCH_RECIPE_ERROR;

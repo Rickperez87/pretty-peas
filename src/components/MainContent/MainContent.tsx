@@ -1,9 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useTypedSelector } from "../../Hooks/useTypedSelector";
 import "./style.scss";
 
 const MainContent = () => {
-  const { recipe, loading, error } = useSelector((state) => state.recipe);
+  const { recipe, loading, error } = useTypedSelector((state) => state.recipe);
   console.log(recipe, loading, error);
   return (
     <>

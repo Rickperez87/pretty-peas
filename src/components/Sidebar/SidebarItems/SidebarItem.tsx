@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchRecipe } from "../../../state/actions";
+import { fetchRecipe } from "../../../state";
 import "./style.scss";
 
 function SidebarItem({ recipe, fetchRecipe }) {

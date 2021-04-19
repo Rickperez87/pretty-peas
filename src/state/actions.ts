@@ -1,7 +1,11 @@
 import axios from "axios";
+import { Dispatch } from "redux";
+import { Action } from "../state/action-interfaces";
 import { ActionType } from "../state/action-types";
 
-export const fetchRecipes = (searchTerm: string) => async (dispatch: any) => {
+export const fetchRecipes = (searchTerm: string) => async (
+  dispatch: Dispatch<Action>
+) => {
   dispatch({ type: ActionType.FETCH_RECIPES });
 
   try {
@@ -27,7 +31,10 @@ export const fetchRecipes = (searchTerm: string) => async (dispatch: any) => {
   }
 };
 
-export const fetchRecipe = (id: number) => async (dispatch, getState) => {
+export const fetchRecipe = (id: number) => async (
+  dispatch: Dispatch<Action>,
+  getState: () => any
+) => {
   dispatch({ type: ActionType.FETCH_RECIPE, payload: [] });
 
   try {
@@ -39,8 +46,9 @@ export const fetchRecipe = (id: number) => async (dispatch, getState) => {
     });
 
     //filter recipe by id
+    getState().recipes.recipes;
     const [recipe] = getState().recipes.recipes.filter(
-      (recipe) => recipe.id === id
+      (recipe: any) => recipe.id === id
     );
     // Add ingredients to recipe object
     recipe.ingredients = res.data.ingredients;
