@@ -1,4 +1,4 @@
 export * from "./action-interfaces";
 export * from "./action-types";
-export * from "./actions";
+export * as actionCreators from "./actions";
 export * from "./reducers";

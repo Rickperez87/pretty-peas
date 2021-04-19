@@ -1,12 +1,13 @@
 import React from "react";
-import { connect } from "react-redux";
-import { fetchRecipe } from "../../../state";
+import { useActions } from "../../../Hooks/useActions";
 import "./style.scss";
 
-function SidebarItem({ recipe, fetchRecipe }) {
+const SidebarItem = ({ recipe }) => {
+  const { fetchRecipe } = useActions();
+
   const handleClick = (e) => {
     let id = e.target.closest(".sidebar-item").getAttribute("id");
-    fetchRecipe(parseInt(id), 10);
+    fetchRecipe(parseInt(id, 10));
   };
 
   return (
@@ -15,6 +16,6 @@ function SidebarItem({ recipe, fetchRecipe }) {
       <div className="sidebar-item__title">{recipe.title}</div>
     </div>
   );
-}
+};
 
-export default connect(null, { fetchRecipe })(SidebarItem);
+export default SidebarItem;

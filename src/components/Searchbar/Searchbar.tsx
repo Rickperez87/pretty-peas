@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "./style.scss";
-import { fetchRecipes } from "../../state/actions";
-import { connect } from "react-redux";
+import { useActions } from "~/Hooks/useActions";
 
-function Searchbar(props) {
+function Searchbar() {
   const [term, setTerm] = useState("");
-
+  const { fetchRecipes } = useActions();
   const onSearchSubmit = () => {
-    props.fetchRecipes(term);
+    fetchRecipes(term);
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,4 +33,4 @@ function Searchbar(props) {
   );
 }
 
-export default connect(null, { fetchRecipes })(Searchbar);
+export default Searchbar;
