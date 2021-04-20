@@ -8,4 +8,7 @@
   align-items: flex-start;
   justify-content: center;
   min-height: 80vh;
+  &__render-recipe {
+    width: 100%;
+  }
 }
