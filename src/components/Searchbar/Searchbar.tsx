@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import sprite from "../sprite.svg";
 import "./style.scss";
 import { useActions } from "~/Hooks/useActions";
 
@@ -27,7 +28,12 @@ function Searchbar() {
           }}
           value={term}
         />
-        <button className="searchbar__btn">Search Recipes</button>
+        <button className="searchbar__btn">
+          <svg className="search-icon">
+            <use href={sprite + "#icon-search"} />
+          </svg>
+          Search Recipes
+        </button>
       </form>
     </div>
   );
