@@ -1,5 +1,10 @@
 .recipe {
   &__image {
-    width: 40%;
+    height: 32rem;
+    position: relative;
+    display: block;
+    // transform: scale(1.04) translateY(-1px);
+    transform-origin: top;
+    object-fit: cover;
   }
 }

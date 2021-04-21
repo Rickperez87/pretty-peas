@@ -7,11 +7,12 @@ img {
   justify-content: start;
   align-items: center;
   padding: 0 3rem;
+  max-width: 100%;
   &:not(:last-child) {
     margin-bottom: 2rem;
-    &:hover {
-      cursor: pointer;
-    }
+  }
+  &:hover {
+    cursor: pointer;
   }
   &__image {
     height: 50px;
@@ -25,8 +26,8 @@ img {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-weight: 600;
-    overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }

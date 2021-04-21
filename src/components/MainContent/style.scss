@@ -3,12 +3,23 @@
   grid-row: 2/4;
   background: #eeeee9;
   color: #000;
-  display: flex;
-  padding-top: 3rem;
-  align-items: flex-start;
-  justify-content: center;
   min-height: 80vh;
+  &__default-paragraph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   &__render-recipe {
     width: 100%;
   }
+}
+.smile-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  background: linear-gradient(to bottom right, #f4a261, #e76f51);
+  background-attachment: fixed;
+  -webkit-text-fill-color: transparent;
+  fill: #f38e82;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
