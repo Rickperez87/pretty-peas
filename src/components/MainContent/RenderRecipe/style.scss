@@ -7,4 +7,17 @@
     transform-origin: top;
     object-fit: cover;
   }
+  &__details {
+    height: 20rem;
+    padding: 0 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    &__text-section {
+      color: #f38e82;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
 }
