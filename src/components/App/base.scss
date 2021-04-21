@@ -29,7 +29,7 @@ button {
 }
 .container {
   display: grid;
-  background: #eeeee9;
+  background: #f8f8f8;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: 10vh auto;
   text-align: center;

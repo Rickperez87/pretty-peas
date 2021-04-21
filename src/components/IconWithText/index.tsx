@@ -2,9 +2,9 @@ import React from "react";
 import sprite from "../sprite.svg";
 import "./style.scss";
 
-function IconWithText({ usehref, data, text }) {
+function IconWithText({ usehref, data, text, col }) {
   return (
-    <div className="detail-item">
+    <div className={`detail-item ${col}`}>
       <svg>
         <use href={sprite + usehref} />
       </svg>

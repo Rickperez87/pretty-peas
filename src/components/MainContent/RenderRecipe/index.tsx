@@ -20,12 +20,17 @@ const RenderRecipe = ({ recipe }) => {
       </section>
       <section className="recipe__text-section">
         <h3 className="recipe__title">recipe ingredients</h3>
-        {recipe.ingredients.map((ingredient) => {
+        {recipe.ingredients.map((ingredient, idx: number) => {
+          const isEven = (num: number) => num % 2 === 0;
           return (
             <IconWithText
+              col={isEven(idx) ? "col-1" : "col-2"}
+              key={idx}
               usehref={"#icon-checkmark"}
               text={ingredient.name}
-              data={`${ingredient.amount.us.value} ${ingredient.amount.us.unit}`}
+              data={`${ingredient.amount.us.value.toFixed(1)} ${
+                ingredient.amount.us.unit
+              }`}
             />
           );
         })}
