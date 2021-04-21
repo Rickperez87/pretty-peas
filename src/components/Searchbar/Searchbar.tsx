@@ -32,7 +32,7 @@ function Searchbar() {
           <svg className="search-icon">
             <use href={sprite + "#icon-search"} />
           </svg>
-          Search Recipes
+          <p>Search</p>
         </button>
       </form>
     </div>

@@ -16,6 +16,14 @@ body {
   min-height: 100vh;
   font-family: sans-serif;
 }
+svg {
+  // height: 100%;
+  // width: 100%;
+  &path {
+    all: inherit;
+  }
+}
+
 p,
 input,
 button {

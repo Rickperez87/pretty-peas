@@ -8,7 +8,7 @@ const Header = () => {
     <header className="header">
       <h1 className="logo">
         <svg className="spoon-knife-icon">
-          <use href={sprite + "#icon-spoon-knife"} x="-280" y="20" />
+          <use href={sprite + "#icon-spoon-knife"} />
         </svg>
         Pretty Pea's
       </h1>
