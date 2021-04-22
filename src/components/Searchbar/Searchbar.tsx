@@ -23,6 +23,7 @@ function Searchbar() {
         <input
           className="searchbar__input"
           type="text"
+          placeholder="Search over 1,000,000 recipes"
           onChange={(e) => {
             handleChange(e);
           }}
