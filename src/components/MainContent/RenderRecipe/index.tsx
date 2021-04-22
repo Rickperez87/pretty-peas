@@ -3,6 +3,9 @@ import IconWithText from "../../IconWithText";
 import "./style.scss";
 
 const RenderRecipe = ({ recipe }) => {
+  const { analyzedInstructions } = recipe;
+  console.log(analyzedInstructions[0]);
+
   return (
     <>
       <img className="recipe__image" src={recipe.image}></img>
@@ -18,7 +21,7 @@ const RenderRecipe = ({ recipe }) => {
           text={"servings"}
         />
       </section>
-      <section className="recipe__text-section">
+      <section className="recipe__ingredients-section">
         <h3 className="recipe__title">recipe ingredients</h3>
         {recipe.ingredients.map((ingredient, idx: number) => {
           const isEven = (num: number) => num % 2 === 0;
@@ -32,6 +35,18 @@ const RenderRecipe = ({ recipe }) => {
                 ingredient.amount.us.unit
               }`}
             />
+          );
+        })}
+      </section>
+      <section className="recipe__directions-section">
+        <h3 className="recipe__title">How to cook it</h3>
+
+        {analyzedInstructions[0].steps.map((step, idx: number) => {
+          return (
+            <div className="step" key={idx}>
+              <span className="step-number">{step.number}</span>
+              <span className="step-text">{step.step}</span>
+            </div>
           );
         })}
       </section>
