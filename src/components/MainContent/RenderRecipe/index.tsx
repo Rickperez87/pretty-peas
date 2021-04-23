@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import IconWithText from "../../IconWithText";
 import "./style.scss";
 
-const RenderRecipe = ({ recipe }) => {
+const RenderRecipe: FC<{ recipe: any }> = ({ recipe }) => {
   const { analyzedInstructions } = recipe;
   console.log(analyzedInstructions[0]);
 
@@ -23,7 +23,7 @@ const RenderRecipe = ({ recipe }) => {
       </section>
       <section className="recipe__ingredients-section">
         <h3 className="recipe__title">recipe ingredients</h3>
-        {recipe.ingredients.map((ingredient, idx: number) => {
+        {recipe.ingredients.map((ingredient: any, idx: number) => {
           const isEven = (num: number) => num % 2 === 0;
           return (
             <IconWithText
@@ -41,14 +41,16 @@ const RenderRecipe = ({ recipe }) => {
       <section className="recipe__directions-section">
         <h3 className="recipe__title">How to cook it</h3>
 
-        {analyzedInstructions[0].steps.map((step, idx: number) => {
-          return (
-            <div className="step" key={idx}>
-              <span className="step-number">{step.number}</span>
-              <span className="step-text">{step.step}</span>
-            </div>
-          );
-        })}
+        {analyzedInstructions[0].steps.map(
+          (step: { number: number; step: string }, idx: number) => {
+            return (
+              <div className="step" key={idx}>
+                <span className="step-number">{step.number}</span>
+                <span className="step-text">{step.step}</span>
+              </div>
+            );
+          }
+        )}
       </section>
     </>
   );

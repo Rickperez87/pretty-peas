@@ -2,7 +2,14 @@ import React from "react";
 import sprite from "../sprite.svg";
 import "./style.scss";
 
-function IconWithText({ usehref, data, text, col }) {
+interface Props {
+  usehref?: any;
+  data: any;
+  text: string;
+  col?: string;
+}
+
+const IconWithText: React.FC<Props> = ({ usehref, data, text, col }) => {
   return (
     <div className={`detail-item ${col}`}>
       <svg>
@@ -12,6 +19,6 @@ function IconWithText({ usehref, data, text, col }) {
       <span className="text">{text}</span>
     </div>
   );
-}
+};
 
 export default IconWithText;
