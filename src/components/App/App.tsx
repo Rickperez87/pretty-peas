@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import MainContent from "../MainContent/MainContent";
 import "./base.scss";
 
-export default function App() {
+const App: React.FC<{}> = () => {
   return (
     <>
       <div className="container">
@@ -14,4 +14,5 @@ export default function App() {
       </div>
     </>
   );
-}
+};
+export default App;

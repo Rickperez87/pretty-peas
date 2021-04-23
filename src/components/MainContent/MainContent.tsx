@@ -4,7 +4,7 @@ import RenderRecipe from "./RenderRecipe";
 import sprite from "../sprite.svg";
 import "./style.scss";
 
-const MainContent = () => {
+const MainContent: React.FC<{}> = () => {
   const { recipe, loading, error } = useTypedSelector((state) => state.recipe);
   console.log(recipe, loading, error);
   return (

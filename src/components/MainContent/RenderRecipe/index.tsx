@@ -2,7 +2,12 @@ import React, { FC } from "react";
 import IconWithText from "../../IconWithText";
 import "./style.scss";
 
-const RenderRecipe: FC<{ recipe: any }> = ({ recipe }) => {
+interface Props {
+  className: string;
+  recipe: any;
+}
+
+const RenderRecipe: FC<Props> = ({ recipe }) => {
   const { analyzedInstructions } = recipe;
   console.log(analyzedInstructions[0]);
 

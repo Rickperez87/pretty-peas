@@ -3,7 +3,7 @@ import Searchbar from "../Searchbar/Searchbar";
 import sprite from "../sprite.svg";
 import "./style.scss";
 
-const Header = () => {
+const Header: React.FC<{}> = () => {
   return (
     <header className="header">
       <h1 className="logo">

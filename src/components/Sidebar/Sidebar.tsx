@@ -3,7 +3,7 @@ import SidebarItem from "./SidebarItems/SidebarItem";
 import { useTypedSelector } from "../../Hooks/useTypedSelector";
 import "./style";
 
-const Sidebar = () => {
+const Sidebar: React.FC<{}> = () => {
   const { recipes, loading, error } = useTypedSelector(
     (state) => state.recipes
   );

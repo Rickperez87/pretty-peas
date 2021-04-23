@@ -3,7 +3,7 @@ import sprite from "../sprite.svg";
 import "./style.scss";
 import { useActions } from "~/Hooks/useActions";
 
-function Searchbar() {
+const Searchbar: React.FC<{}> = () => {
   const [term, setTerm] = useState("");
   const { fetchRecipes } = useActions();
   const onSearchSubmit = () => {
@@ -38,6 +38,6 @@ function Searchbar() {
       </form>
     </div>
   );
-}
+};
 
 export default Searchbar;
