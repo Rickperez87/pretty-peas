@@ -34,4 +34,22 @@
     text-transform: uppercase;
     color: #f38e82;
   }
+
+  &__directions-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem, auto;
+    row-gap: 1rem;
+    justify-items: start;
+  }
+}
+.step {
+  grid-column: 1/2;
+  align-items: flex-start;
+}
+.step-number {
+  margin-right: 0.5rem;
+}
+.step-text {
+  margin-right: 0.5rem;
 }
