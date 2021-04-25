@@ -6,7 +6,7 @@ interface Props {
   usehref?: any;
   data: any;
   text: string;
-  col?: string;
+  col?: string | null;
 }
 
 const IconWithText: React.FC<Props> = ({ usehref, data, text, col }) => {

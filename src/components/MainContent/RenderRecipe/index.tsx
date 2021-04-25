@@ -19,6 +19,7 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
           usehref={"#icon-clock"}
           data={recipe.readyInMinutes}
           text={"Minutes"}
+          col={null}
         />
         <IconWithText
           usehref={"#icon-users"}
@@ -49,10 +50,14 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
         {analyzedInstructions[0].steps.map(
           (step: { number: number; step: string }, idx: number) => {
             return (
-              <div className="step" key={idx}>
-                <span className="step-number">{step.number}</span>
-                <span className="step-text">{step.step}</span>
-              </div>
+              <>
+                <span className="step-number" key={step.number}>
+                  {step.number})
+                </span>
+                <span className="step-text" key={idx}>
+                  {step.step}
+                </span>
+              </>
             );
           }
         )}
