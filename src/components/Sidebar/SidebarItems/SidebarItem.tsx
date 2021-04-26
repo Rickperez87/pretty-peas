@@ -9,12 +9,17 @@ interface Props {
 const SidebarItem: React.FC<Props> = ({ recipe }) => {
   const { fetchRecipe } = useActions();
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent> | null
+  ) => {
+    if (!e) return;
     let target = e.target as HTMLDivElement;
-    if (target != null) {
-      let id = target.closest(".sidebar-item").getAttribute("id");
-      fetchRecipe(parseInt(id, 10));
-    }
+    if (!target) return;
+    let sidebarElement = target.closest(".sidebar-item");
+    if (!sidebarElement) return;
+    let id = sidebarElement.getAttribute("id");
+    if (!id) return;
+    fetchRecipe(parseInt(id, 10));
   };
 
   return (
