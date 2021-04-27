@@ -15,6 +15,8 @@
     border: none;
     flex-basis: 50%;
     padding: 1rem 3rem;
+    font: inherit;
+    font-size: inherit;
     &:focus {
       outline: 10rem;
     }
