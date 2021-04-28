@@ -17,7 +17,7 @@ const Sidebar: React.FC<{}> = () => {
           ))}
         </div>
       )}
-      {loading && <h3>Loading...</h3>}
+      {loading && <h3 className="sidebar__loading">Loading...</h3>}
       {error && <h3>{error}</h3>}
     </>
   );

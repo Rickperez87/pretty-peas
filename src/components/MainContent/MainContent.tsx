@@ -20,7 +20,7 @@ const MainContent: React.FC<{}> = () => {
         </div>
       )}
       {error && <h3 className="main-content__error">{error}</h3>}
-      {loading && <h3 className="main-content__error">Loading...</h3>}
+      {loading && <h3 className="main-content__loading">Loading...</h3>}
       {!error && !loading && recipe.length !== 0 && (
         <RenderRecipe className="main-content__render-recipe" recipe={recipe} />
       )}

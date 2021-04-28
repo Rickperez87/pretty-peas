@@ -19,6 +19,8 @@ img {
     width: 50px;
     border-radius: 100rem;
     margin-right: 2rem;
+    object-fit: cover;
+    object-position: center;
   }
   &__title {
     background: linear-gradient(to bottom right, #f4a261, #e76f51);
