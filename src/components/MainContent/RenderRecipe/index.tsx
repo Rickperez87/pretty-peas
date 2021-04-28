@@ -47,20 +47,22 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
       <section className="recipe__directions-section">
         <h3 className="recipe__title">How to cook it</h3>
 
-        {analyzedInstructions[0].steps.map(
-          (step: { number: number; step: string }, idx: number) => {
-            return (
-              <>
-                <span className="step-number" key={step.number}>
-                  {step.number})
-                </span>
-                <span className="step-text" key={idx}>
-                  {step.step}
-                </span>
-              </>
-            );
-          }
-        )}
+        {!analyzedInstructions[0].steps
+          ? ""
+          : analyzedInstructions[0].steps.map(
+              (step: { number: number; step: string }, idx: number) => {
+                return (
+                  <>
+                    <span className="step-number" key={step.number}>
+                      {step.number})
+                    </span>
+                    <span className="step-text" key={idx}>
+                      {step.step}
+                    </span>
+                  </>
+                );
+              }
+            )}
       </section>
     </>
   );
