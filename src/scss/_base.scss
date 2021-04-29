@@ -1,0 +1,60 @@
+//variables
+// $website-width: 128rem;
+// $main-color: #ffbc00;
+// $light-color: #f4f4f4;
+// $medium-color: #ccc;
+// $dark-color: #333;
+
+$main-bg: linear-gradient(to bottom right, #f4a261, #e76f51);
+
+//base styles
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+  @include respond(big-desktop) {
+    font-size: 80%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  background: $main-bg;
+  min-height: 100vh;
+}
+p,
+input,
+button {
+  margin: 1rem;
+}
+//   a {
+//     text-decoration: none;
+//     color: $dark-color;
+//   }
+//   ul {
+//     list-style: none;
+//   }
+//   h2,
+//   h3,
+//   h4 {
+//     text-transform: uppercase;
+//   }
+//   img {
+//     width: 100%;
+//   }
