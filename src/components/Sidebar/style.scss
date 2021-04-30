@@ -1,7 +1,9 @@
+@import "../../scss/scss-variables";
+
 .sidebar {
   grid-column: 1/2;
   grid-row: 2 / 4;
-  background: #fff;
+  background: $white-color;
   padding: 1rem 0;
   &__loading {
     text-align: center;
