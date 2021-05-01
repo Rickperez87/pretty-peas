@@ -1,3 +1,5 @@
+@import "../../../scss/scss-variables";
+@import "../../../scss/abstracts";
 .recipe {
   &__image {
     height: 32rem;
@@ -17,7 +19,7 @@
     text-transform: uppercase;
   }
   &__ingredients-section {
-    background: #e4e4e4;
+    background: $light-bg;
     display: grid;
     min-height: 0;
     min-width: 0;
@@ -33,7 +35,7 @@
     align-self: center;
     justify-self: center;
     text-transform: uppercase;
-    color: #f38e82;
+    color: $main-color;
   }
 
   &__directions-section {
@@ -52,7 +54,7 @@
   }
 }
 .step-number {
-  color: #f38e82;
+  color: $main-color;
   font-weight: bold;
   display: inline-block;
   grid-column: 1/2;

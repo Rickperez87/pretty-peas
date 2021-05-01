@@ -4,6 +4,8 @@ svg {
   }
 }
 
+@import "../../scss/abstracts";
+
 .container {
   display: grid;
   background: #f8f8f8;
@@ -12,4 +14,7 @@ svg {
   max-width: 120rem;
   margin: 3rem auto;
   border-radius: 0.6rem;
+  @include respond(tab-port) {
+    margin: 0 auto;
+  }
 }
