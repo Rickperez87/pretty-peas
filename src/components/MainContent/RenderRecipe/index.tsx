@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import IconWithText from "../../IconWithText";
+import RecipeTitle from "../RecipeTitle/RecipeTitle";
 import "./style.scss";
 
 interface Props {
@@ -13,6 +14,7 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
   return (
     <>
       <img className="recipe__image" src={recipe.image}></img>
+      <RecipeTitle title={recipe.title} />
       <section className="recipe__details">
         <IconWithText
           usehref={"#icon-clock"}
