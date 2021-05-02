@@ -6,7 +6,7 @@ import "./style.scss";
 
 const MainContent: React.FC<{}> = () => {
   const { recipe, loading, error } = useTypedSelector((state) => state.recipe);
-  console.log(recipe, loading, error);
+  console.log(recipe);
   return (
     <div className="main-content">
       {recipe.length === 0 && (
