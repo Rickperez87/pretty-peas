@@ -51,14 +51,14 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
           : analyzedInstructions[0].steps.map(
               (step: { number: number; step: string }, idx: number) => {
                 return (
-                  <>
+                  <div key={idx}>
                     <span className="step-number" key={step.number}>
                       {step.number})
                     </span>
                     <span className="step-text" key={idx}>
                       {step.step}
                     </span>
-                  </>
+                  </div>
                 );
               }
             )}
