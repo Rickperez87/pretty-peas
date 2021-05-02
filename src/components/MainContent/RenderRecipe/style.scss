@@ -5,10 +5,12 @@
     height: 32rem;
     position: relative;
     display: block;
-    // transform: scale(1.04) translateY(-1px);
     transform-origin: top;
     object-fit: contain;
     object-position: center;
+  }
+  &__image-wrapper {
+    position: relative;
   }
   &__details {
     height: 12rem;

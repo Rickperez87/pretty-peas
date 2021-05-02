@@ -13,8 +13,10 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
 
   return (
     <>
-      <img className="recipe__image" src={recipe.image}></img>
-      <RecipeTitle title={recipe.title} />
+      <div className="recipe__image-wrapper">
+        <img className="recipe__image" src={recipe.image}></img>
+        <RecipeTitle title={recipe.title} />
+      </div>
       <section className="recipe__details">
         <IconWithText
           usehref={"#icon-clock"}
