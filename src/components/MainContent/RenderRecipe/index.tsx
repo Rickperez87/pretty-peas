@@ -9,7 +9,6 @@ interface Props {
 
 const RenderRecipe: FC<Props> = ({ recipe }) => {
   const { analyzedInstructions } = recipe;
-  console.log(analyzedInstructions[0]);
 
   return (
     <>
@@ -37,9 +36,9 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
               key={idx}
               usehref={"#icon-checkmark"}
               text={ingredient.name}
-              data={`${ingredient.amount.us.value.toFixed(1)} ${
-                ingredient.amount.us.unit
-              }`}
+              data={`${ingredient.amount.us.value
+                .toFixed(1)
+                .replace(".0", "")} ${ingredient.amount.us.unit}`}
             />
           );
         })}
