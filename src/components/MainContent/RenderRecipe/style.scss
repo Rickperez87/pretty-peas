@@ -6,8 +6,13 @@
     position: relative;
     display: block;
     transform-origin: top;
+    image-rendering: crisp-edges;
     object-fit: contain;
     object-position: center;
+    img {
+      width: 100%;
+      display: inline-block;
+    }
   }
   &__image-wrapper {
     position: relative;

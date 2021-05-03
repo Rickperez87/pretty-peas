@@ -1,20 +1,48 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import IconWithText from "../../IconWithText";
 import RecipeTitle from "../RecipeTitle/RecipeTitle";
+import Upscaler from "upscaler";
 import "./style.scss";
 
+//after testing the example site, i need to implement using gans model with 4x. I think that the docs have a load model example.
 interface Props {
   className: string;
   recipe: any;
 }
 
 const RenderRecipe: FC<Props> = ({ recipe }) => {
+  const [src, setSrc] = useState(recipe.image);
   const { analyzedInstructions } = recipe;
+  console.log(!!src);
+
+  const upscaleImage = async () => {
+    const upscaler = new Upscaler({
+      model: "idealo/psnr-small",
+    });
+    await upscaler.warmup([[231, 312]]);
+    const upscaledImage = await upscaler.upscale(recipe.image, {
+      output: "src",
+      patchSize: 64,
+      padding: 5,
+    });
+
+    return upscaledImage;
+  };
+
+  useEffect(() => {
+    (async () => {
+      const updateSrc = await upscaleImage();
+      setSrc(updateSrc);
+    })();
+    return function cleanup() {
+      setSrc("");
+    };
+  }, []);
 
   return (
     <>
       <div className="recipe__image-wrapper">
-        <img className="recipe__image" src={recipe.image}></img>
+        <img className="recipe__image" src={src}></img>
         <RecipeTitle title={recipe.title} />
       </div>
       <section className="recipe__details">

@@ -6,7 +6,6 @@ import "./style.scss";
 
 const MainContent: React.FC<{}> = () => {
   const { recipe, loading, error } = useTypedSelector((state) => state.recipe);
-  console.log(recipe);
   return (
     <div className="main-content">
       {recipe.length === 0 && (
@@ -22,7 +21,11 @@ const MainContent: React.FC<{}> = () => {
       {error && <h3 className="main-content__error">{error}</h3>}
       {loading && <h3 className="main-content__loading">Loading...</h3>}
       {!error && !loading && recipe.length !== 0 && (
-        <RenderRecipe className="main-content__render-recipe" recipe={recipe} />
+        <RenderRecipe
+          className="main-content__render-recipe"
+          recipe={recipe}
+          loading={loading}
+        />
       )}
     </div>
   );
