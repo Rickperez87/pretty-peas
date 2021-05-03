@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import IconWithText from "../../IconWithText";
+import IconWithText from "../../../IconWithText";
 import RecipeTitle from "../RecipeTitle/RecipeTitle";
 import "./style.scss";
 
@@ -14,7 +14,7 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
   return (
     <>
       <div className="recipe__image-wrapper">
-        <img className="recipe__image" src={recipe.img}></img>
+        <img className="recipe__image" src={recipe.image}></img>
         <RecipeTitle title={recipe.title} />
       </div>
       <section className="recipe__details">

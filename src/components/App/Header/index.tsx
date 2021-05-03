@@ -1,6 +1,6 @@
 import React from "react";
-import Searchbar from "../Searchbar/Searchbar";
-import sprite from "../sprite.svg";
+import Searchbar from "./Searchbar";
+import sprite from "#sprite";
 import "./style.scss";
 
 const Header: React.FC<{}> = () => {

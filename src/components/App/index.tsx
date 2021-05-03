@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../Header/Header";
-import Sidebar from "../Sidebar/Sidebar";
-import MainContent from "../MainContent/MainContent";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import MainContent from "./MainContent";
 import "./style.scss";
-import "../../scss/main.scss";
+import "#scss/main.scss";
 
 const App: React.FC<{}> = () => {
   return (

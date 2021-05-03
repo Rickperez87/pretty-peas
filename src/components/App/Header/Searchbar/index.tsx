@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import sprite from "../sprite.svg";
+import sprite from "#sprite";
 import "./style.scss";
-import { useActions } from "~/Hooks/useActions";
+import { useActions } from "#hooks/useActions";
 
 const Searchbar: React.FC<{}> = () => {
   const [term, setTerm] = useState("");

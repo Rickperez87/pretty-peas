@@ -1,5 +1,5 @@
 import React from "react";
-import { useActions } from "../../../Hooks/useActions";
+import { useActions } from "#hooks/useActions";
 import "./style.scss";
 
 interface Props {

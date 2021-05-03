@@ -1,7 +1,7 @@
 import React from "react";
-import SidebarItem from "./SidebarItems/SidebarItem";
-import { useTypedSelector } from "../../Hooks/useTypedSelector";
-import "./style";
+import SidebarItem from "./SidebarItems";
+import { useTypedSelector } from "#hooks/useTypedSelector";
+import "./style.scss";
 
 const Sidebar: React.FC<{}> = () => {
   const { recipes, loading, error } = useTypedSelector(
