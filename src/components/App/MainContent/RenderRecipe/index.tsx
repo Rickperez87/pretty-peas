@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import IconWithText from "../../../IconWithText";
+import IconWithText from "#shared/IconWithText";
 import RecipeTitle from "../RecipeTitle/RecipeTitle";
 import "./style.scss";
 

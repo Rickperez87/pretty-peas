@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import sprite from "#sprite";
+import sprite from "#assets/sprite.svg";
 import "./style.scss";
 import { useActions } from "#hooks/useActions";
 

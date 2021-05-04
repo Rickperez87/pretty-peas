@@ -35,9 +35,11 @@
     "redux-thunk": "^2.3.0"
   },
   "alias": {
+    "#components": "./src/components",
     "#scss": "./src/scss",
     "#state": "./src/state",
-    "#hooks": "./src/Hooks",
-    "#sprite": "./src/components/sprite.svg"
+    "#hooks": "./src/hooks",
+    "#shared": "./src/components/shared",
+    "#assets": "./src/assets"
   }
 }

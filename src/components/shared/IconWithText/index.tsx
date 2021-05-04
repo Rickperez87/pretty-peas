@@ -1,5 +1,5 @@
 import React from "react";
-import sprite from "../sprite.svg";
+import sprite from "#assets/sprite.svg";
 import "./style.scss";
 
 interface Props {
