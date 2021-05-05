@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html --open",
-    "build:parcel": "parcel build src/index.html --public-url .",
-    "clean": "rm -r dist",
-    "build": "npm run clean && npm run build:parcel"
+    "build": "parcel build src/index.html --public-url ."
   },
   "repository": {
     "type": "git",
