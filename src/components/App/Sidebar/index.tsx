@@ -1,6 +1,6 @@
 import React from "react";
 import SidebarItem from "./SidebarItems";
-import { useTypedSelector } from "#hooks/useTypedSelector";
+import { useTypedSelector } from "~/hooks/useTypedSelector";
 import "./style.scss";
 
 const Sidebar: React.FC<{}> = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useTypedSelector } from "~/hooks/useTypedSelector";
 import RenderRecipe from "./RenderRecipe";
-import sprite from "#assets/sprite.svg";
+import sprite from "~/assets/sprite.svg";
 import "./style.scss";
 
 const MainContent: React.FC<{}> = () => {
