@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html --open",
-    "build": "parcel build src/index.html"
+    "build:parcel": "parcel build src/index.html --public-url .",
+    "clean": "rm -r dist",
+    "build": "npm run clean && npm run build:parcel"
   },
   "repository": {
     "type": "git",
@@ -34,5 +36,13 @@
     "react-redux": "^7.2.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
+  },
+  "alias": {
+    "#components": "./src/components",
+    "#scss": "./src/scss",
+    "#state": "./src/state",
+    "#hooks": "./src/hooks",
+    "#shared": "./src/components/shared",
+    "#assets": "./src/assets"
   }
 }
