@@ -9,7 +9,7 @@ svg {
 .container {
   display: grid;
   background: #f8f8f8;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
   grid-template-rows: 8rem auto;
   max-width: 120rem;
   margin: 3rem auto;

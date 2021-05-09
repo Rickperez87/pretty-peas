@@ -1,9 +1,13 @@
+@import "../../../scss/abstracts";
 .header {
   grid-column: 1 / 4;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 0 3rem;
+  @include respond(tab-port) {
+    padding: 0 1.5rem;
+  }
 }
 .logo {
   height: 100%;
@@ -14,6 +18,13 @@
   justify-content: center;
   white-space: nowrap;
   margin-right: 3rem;
+  @include respond(tab-port) {
+    margin: 0 auto;
+    font-size: 2rem;
+  }
+  @include respond(phone) {
+    display: none;
+  }
 }
 
 .spoon-knife-icon {
@@ -26,6 +37,7 @@
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  &#icon-spoon-knife {
+  @include respond(tab-port) {
+    margin-right: 0 0.5rem;
   }
 }
