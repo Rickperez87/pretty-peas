@@ -24,6 +24,13 @@
     align-items: center;
     justify-content: flex-start;
     text-transform: uppercase;
+    @include respond(tab-port) {
+      padding: 0 2rem;
+      justify-content: center;
+    }
+    @include respond(phone) {
+      padding: 0;
+    }
   }
   &__ingredients-section {
     background: $light-bg;
@@ -36,6 +43,10 @@
     justify-items: start;
     padding: 3rem 4rem;
     overflow: hidden;
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
   }
   &__title {
     grid-column: 1/3;

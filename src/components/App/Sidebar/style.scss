@@ -1,10 +1,14 @@
 @import "../../../scss/scss-variables";
+@import "../../../scss/abstracts";
 
 .sidebar {
   grid-column: 1/2;
   grid-row: 2 / 4;
   background: $white-color;
   padding: 1rem 0;
+  @include respond(tab-port) {
+    grid-column: 1/2;
+  }
   &__loading {
     text-align: center;
   }

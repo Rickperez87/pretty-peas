@@ -16,5 +16,7 @@ svg {
   border-radius: 0.6rem;
   @include respond(tab-port) {
     margin: 0 auto;
+
+    grid-template-columns: 1fr;
   }
 }
