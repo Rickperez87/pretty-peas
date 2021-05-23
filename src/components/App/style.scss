@@ -17,6 +17,7 @@ svg {
   @include respond(tab-port) {
     margin: 0 auto;
 
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 8rem auto auto auto auto auto;
   }
 }
