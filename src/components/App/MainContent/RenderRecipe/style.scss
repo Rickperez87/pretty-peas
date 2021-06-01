@@ -52,6 +52,9 @@
     justify-self: center;
     text-transform: uppercase;
     color: $main-color;
+    @include respond(tab-port) {
+      grid-column: 1/4;
+    }
   }
 
   &__directions-section {
@@ -63,7 +66,7 @@
     padding: 3rem 4rem;
     justify-items: start;
     @include respond(tab-port) {
-      grid-template-columns: 25% 20px 1fr;
+      grid-template-columns: 20px 1fr;
     }
   }
 }
@@ -77,14 +80,8 @@
   font-weight: bold;
   display: inline-block;
   grid-column: 1/2;
-  @include respond(tab-port) {
-    grid-column: 2/3;
-  }
 }
 .step-text {
   display: inline-block;
   grid-column: 2/3;
-  @include respond(tab-port) {
-    grid-column: 3/4;
-  }
 }
