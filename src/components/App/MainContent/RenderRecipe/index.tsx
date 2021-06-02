@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import IconWithText from "~/components/shared/IconWithText";
 import RecipeTitle from "../RecipeTitle/RecipeTitle";
+import Icon from "~/components/shared/icon";
 import "./style.scss";
 
 interface Props {
@@ -29,6 +30,8 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
           data={recipe.servings}
           text={"servings"}
         />
+        <Icon usehref={"#icon-plus"} />
+        <Icon usehref={"#icon-cross"} />
       </section>
       <section className="recipe__ingredients-section">
         <h3 className="recipe__title">recipe ingredients</h3>

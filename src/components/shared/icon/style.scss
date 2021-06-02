@@ -1,0 +1,13 @@
+.icon {
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
+  white-space: nowrap;
+  min-width: 0;
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+    fill: #f38e82;
+  }
+}
