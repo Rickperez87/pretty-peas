@@ -31,7 +31,7 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
           text={"servings"}
         />
         <Icon usehref={"#icon-plus"} />
-        <Icon usehref={"#icon-cross"} />
+        <Icon usehref={"#icon-minus"} />
       </section>
       <section className="recipe__ingredients-section">
         <h3 className="recipe__title">recipe ingredients</h3>

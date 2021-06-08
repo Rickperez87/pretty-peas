@@ -48,4 +48,7 @@
 <svg id="icon-checkmark" viewBox="0 0 32 32" x="0" y="0">
 <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
 </svg>
+<svg id="icon-minus" viewBox="0 0 32 32">
+<path d="M0 13v6c0 0.552 0.448 1 1 1h30c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1h-30c-0.552 0-1 0.448-1 1z"></path>
+</svg>
 </svg>
