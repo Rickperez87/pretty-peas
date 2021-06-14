@@ -36,7 +36,12 @@ const RenderRecipe: FC<Props> = ({ recipe }) => {
             console.log("testing plus");
           }}
         />
-        <Icon usehref={"#icon-minus"} />
+        <Icon
+          usehref={"#icon-minus"}
+          func={() => {
+            console.log("testing minus");
+          }}
+        />
       </section>
       <section className="recipe__ingredients-section">
         <h3 className="recipe__title">recipe ingredients</h3>
