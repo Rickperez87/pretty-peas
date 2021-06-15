@@ -52,6 +52,10 @@ export const fetchRecipe = (id: number) => async (
     );
     // Add ingredients to recipe object
     recipe.ingredients = res.data.ingredients;
+    //Add serving size to recipe object
+
+    // start here
+    // recipe.srvngs = res.data.ingredients.forEach((i) => i.amount.us.value);
 
     dispatch({ type: ActionType.FETCH_RECIPE_SUCCESS, payload: recipe });
   } catch (err) {
