@@ -52,12 +52,16 @@ export const fetchRecipe = (id: number) => async (
     );
     // Add ingredients to recipe object
     recipe.ingredients = res.data.ingredients;
+    //Add base serving size to recipe object
+
+    recipe.baseServings = recipe.servings;
     //Add serving size to recipe object
 
-    // Chnage data to not be ingredients as current but to include entire recipe object.
-    recipe.testing = res;
-    recipe.srvngs = res.data.ingredients.map(
-      (i) => parseInt(i.amount.us.value, 10) / parseInt(res.data.servings, 10)
+    recipe.srvngs = recipe.ingredients.map((i) =>
+      (
+        (parseFloat(i.amount.us.value) / parseInt(recipe.servings, 10)) *
+        parseFloat(recipe.baseServings)
+      ).toFixed(1)
     );
 
     dispatch({ type: ActionType.FETCH_RECIPE_SUCCESS, payload: recipe });
