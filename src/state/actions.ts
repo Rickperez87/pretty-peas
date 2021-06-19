@@ -69,3 +69,19 @@ export const fetchRecipe = (id: number) => async (
     dispatch({ type: ActionType.FETCH_RECIPE_ERROR, payload: err.message });
   }
 };
+export const increaseServings = () => (
+  dispatch: Dispatch<Action>,
+  getState: () => any
+) => {
+  dispatch({ type: ActionType.INCREASE_SERVINGS, payload: [] });
+
+  try {
+    //filter recipe by id
+    getState().recipes.recipes;
+  } catch (err) {
+    dispatch({
+      type: ActionType.INCREASE_SERVINGS_ERROR,
+      payload: err.message,
+    });
+  }
+};
