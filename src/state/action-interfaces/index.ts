@@ -13,6 +13,7 @@ interface FetchRecipesErrorAction {
 }
 interface FetchRecipeAction {
   type: ActionType.FETCH_RECIPE;
+  payload: any;
 }
 interface FetchRecipeSuccessAction {
   type: ActionType.FETCH_RECIPE_SUCCESS;
