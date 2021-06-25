@@ -30,7 +30,6 @@ export const fetchRecipes = (searchTerm: string) => async (
     dispatch({ type: ActionType.FETCH_RECIPES_ERROR, payload: err.message });
   }
 };
-
 export const fetchRecipe = (id: number) => async (
   dispatch: Dispatch<Action>,
   getState: () => any
@@ -68,4 +67,22 @@ export const fetchRecipe = (id: number) => async (
   } catch (err) {
     dispatch({ type: ActionType.FETCH_RECIPE_ERROR, payload: err.message });
   }
+};
+
+export const increaseServing = () => (
+  dispatch: Dispatch<Action>,
+  getState: () => any
+) => {
+  dispatch({ type: ActionType.INCREASE_SERVINGS, payload: [] });
+
+  //get current serving
+  console.log(getState());
+
+  //increment serving
+  // recipe.servings=parseInt(recipe.servings,10)+1;
+
+  //   dispatch({ type: ActionType.FETCH_RECIPE_SUCCESS, payload: recipe });
+  // } catch (err) {
+  //   dispatch({ type: ActionType.FETCH_RECIPE_ERROR, payload: err.message });
+  // }
 };
